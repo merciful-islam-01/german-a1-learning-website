@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deutsch A1 – Complete Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --cream: #faf8f3;
+    --gold: #e8b84b;
+    --sage: #7aab8a;
+    --rose: #e07b7b;
+    --sky: #6fa3d4;
+    --lavender: #a89fd8;
+    --warm: #f0ebe0;
+    --card: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    min-height: 100vh;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--ink);
+    color: white;
+    padding: 60px 24px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: -60px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: rgba(232,184,75,0.12);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; right: -40px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: rgba(122,171,138,0.12);
+  }
+  .flag { font-size: 52px; margin-bottom: 12px; }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 6vw, 3.4rem);
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero p {
+    margin-top: 12px;
+    font-size: 1rem;
+    opacity: 0.65;
+    font-weight: 300;
+  }
+  .badge-row {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    justify-content: center; margin-top: 20px;
+  }
+  .badge {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 0.78rem;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+  }
+
+  /* NAV TABS */
+  .nav-wrap {
+    background: var(--ink);
+    padding: 0 16px 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .nav-wrap::-webkit-scrollbar { display: none; }
+  .nav {
+    display: flex; gap: 0;
+    min-width: max-content;
+  }
+  .nav-btn {
+    background: none; border: none;
+    color: rgba(255,255,255,0.45);
+    padding: 14px 18px;
+    font-size: 0.82rem;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+  }
+  .nav-btn:hover { color: rgba(255,255,255,0.75); }
+  .nav-btn.active {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+
+  /* CONTENT */
+  .content { padding: 28px 20px 80px; max-width: 700px; margin: 0 auto; }
+
+  .section { display: none; animation: fadeUp 0.35s ease; }
+  .section.active { display: block; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* SECTION HEADER */
+  .sec-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .sec-subtitle {
+    font-size: 0.88rem;
+    color: #888;
+    margin-bottom: 24px;
+    font-weight: 300;
+  }
+
+  /* CARD */
+  .card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  }
+  .card-title {
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 14px;
+  }
+
+  /* ALPHABET GRID */
+  .alpha-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+    gap: 10px;
+  }
+  .alpha-cell {
+    background: var(--warm);
+    border-radius: 12px;
+    padding: 10px 6px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.15s, background 0.15s;
+  }
+  .alpha-cell:hover { transform: scale(1.05); background: var(--gold); }
+  .alpha-cell .letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .alpha-cell .pronun {
+    font-size: 0.62rem;
+    color: #888;
+    margin-top: 4px;
+    line-height: 1.3;
+  }
+
+  /* ARTICLE TABLE */
+  .art-table { width: 100%; border-collapse: collapse; }
+  .art-table th {
+    text-align: left;
+    font-size: 0.75rem;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: #aaa;
+    padding: 6px 10px 10px;
+    font-weight: 500;
+  }
+  .art-table td {
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+  }
+  .art-table tr:nth-child(odd) td { background: var(--warm); }
+  .de { font-weight: 600; }
+  .gender-m { color: var(--sky); }
+  .gender-f { color: var(--rose); }
+  .gender-n { color: var(--sage); }
+  .gender-p { color: var(--lavender); }
+
+  /* VOCAB ROWS */
+  .vocab-row {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0ede6;
+    gap: 12px;
+  }
+  .vocab-row:last-child { border-bottom: none; }
+  .vocab-de {
+    font-weight: 600;
+    font-size: 1rem;
+    min-width: 120px;
+  }
+  .vocab-en {
+    color: #777;
+    font-size: 0.9rem;
+    flex: 1;
+  }
+  .vocab-badge {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+    background: var(--warm);
+    color: #999;
+    white-space: nowrap;
+  }
+
+  /* NUMBERS GRID */
+  .num-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .num-cell {
+    background: var(--warm);
+    border-radius: 10px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .num-n {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--gold);
+    min-width: 30px;
+  }
+  .num-de { font-weight: 600; font-size: 0.9rem; }
+
+  /* PHRASE LIST */
+  .phrase {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0ede6;
+  }
+  .phrase:last-child { border-bottom: none; }
+  .phrase-de { font-weight: 600; font-size: 1rem; color: var(--ink); }
+  .phrase-en { font-size: 0.87rem; color: #888; margin-top: 2px; }
+
+  /* DAYS */
+  .day-row {
+    display: flex; align-items: center;
+    padding: 11px 0;
+    border-bottom: 1px solid #f0ede6;
+    gap: 14px;
+  }
+  .day-row:last-child { border-bottom: none; }
+  .day-num {
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .day-de { font-weight: 600; font-size: 0.97rem; flex: 1; }
+  .day-en { color: #999; font-size: 0.87rem; }
+
+  /* VERB TABLE */
+  .verb-card {
+    background: var(--warm);
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 14px;
+  }
+  .verb-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+  .verb-meaning { font-size: 0.85rem; color: #888; margin-bottom: 14px; }
+  .conj-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+  .conj-row {
+    background: white;
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 0.88rem;
+  }
+  .conj-pron { color: #aaa; font-size: 0.78rem; display: block; }
+  .conj-form { font-weight: 600; }
+
+  /* COLORS */
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+  }
+  .color-cell {
+    border-radius: 12px;
+    padding: 14px 10px;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    font-size: 0.85rem;
+  }
+  .color-en { font-size: 0.72rem; opacity: 0.75; margin-top: 3px; }
+
+  /* QUIZ */
+  .quiz-q {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 6px;
+  }
+  .quiz-hint { text-align: center; color: #aaa; font-size: 0.82rem; margin-bottom: 24px; }
+  .quiz-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .quiz-opt {
+    background: var(--warm);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 14px 10px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.15s;
+  }
+  .quiz-opt:hover { border-color: var(--gold); }
+  .quiz-opt.correct { background: #d4edda; border-color: var(--sage); color: #2d6a3f; }
+  .quiz-opt.wrong { background: #fde8e8; border-color: var(--rose); color: #a33; }
+  .quiz-opt.disabled { cursor: default; opacity: 0.7; }
+  .quiz-feedback {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    min-height: 28px;
+    margin-bottom: 10px;
+  }
+  .quiz-score {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #aaa;
+    margin-bottom: 16px;
+  }
+  .btn {
+    display: block;
+    width: 100%;
+    background: var(--ink);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 0.95rem;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+    transition: opacity 0.15s;
+  }
+  .btn:hover { opacity: 0.85; }
+  .btn.gold { background: var(--gold); color: var(--ink); }
+
+  /* INFO BOX */
+  .info-box {
+    background: linear-gradient(135deg, #fff9ec, #fff3d0);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 12px 12px 0;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .info-box strong { color: var(--ink); }
+
+  /* PROGRESS BAR */
+  .prog-wrap { background: #eee; border-radius: 20px; height: 6px; margin-bottom: 22px; }
+  .prog-bar { height: 6px; border-radius: 20px; background: var(--gold); transition: width 0.4s; }
+
+  /* MONTHS */
+  .months-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .month-cell {
+    background: var(--warm);
+    border-radius: 10px;
+    padding: 10px 14px;
+  }
+  .month-num { font-size: 0.7rem; color: #bbb; font-weight: 600; letter-spacing: 0.5px; }
+  .month-de { font-weight: 600; }
+  .month-en { font-size: 0.82rem; color: #999; }
+
+  /* SEASONS */
+  .season-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .season-cell {
+    border-radius: 14px;
+    padding: 18px 14px;
+    text-align: center;
+  }
+  .season-icon { font-size: 2rem; margin-bottom: 6px; }
+  .season-de { font-weight: 700; font-size: 1rem; }
+  .season-en { font-size: 0.8rem; opacity: 0.7; margin-top: 2px; }
+
+  /* FAMILY */
+  .fam-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .fam-cell {
+    background: var(--warm);
+    border-radius: 10px;
+    padding: 10px 12px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .fam-icon { font-size: 1.4rem; }
+  .fam-de { font-weight: 600; font-size: 0.9rem; }
+  .fam-en { font-size: 0.78rem; color: #999; }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.78rem;
+    color: #bbb;
+    border-top: 1px solid #eee;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="flag">🇩🇪</div>
+  <h1>Deutsch <span>A1</span><br>Complete Guide</h1>
+  <p>Your full beginner's German learning companion</p>
+  <div class="badge-row">
+    <span class="badge">Alphabet</span>
+    <span class="badge">Articles</span>
+    <span class="badge">Numbers</span>
+    <span class="badge">Days & Months</span>
+    <span class="badge">Verbs</span>
+    <span class="badge">Vocabulary</span>
+    <span class="badge">Quiz</span>
+  </div>
+</div>
+
+<div class="nav-wrap">
+  <div class="nav">
+    <button class="nav-btn active" onclick="show('alphabet')">Alphabet</button>
+    <button class="nav-btn" onclick="show('articles')">Articles</button>
+    <button class="nav-btn" onclick="show('numbers')">Numbers</button>
+    <button class="nav-btn" onclick="show('time')">Days & Time</button>
+    <button class="nav-btn" onclick="show('verbs')">Verbs</button>
+    <button class="nav-btn" onclick="show('vocab')">Vocabulary</button>
+    <button class="nav-btn" onclick="show('phrases')">Phrases</button>
+    <button class="nav-btn" onclick="show('quiz')">Quiz 🎯</button>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- ALPHABET -->
+  <div class="section active" id="alphabet">
+    <div class="sec-title">Das Alphabet</div>
+    <div class="sec-subtitle">The German Alphabet — 26 letters + 4 special characters</div>
+    <div class="info-box">
+      German uses the same 26 letters as English, plus <strong>Ä, Ö, Ü</strong> (umlauts) and <strong>ß</strong> (Eszett / sharp-s). Tap any letter to hear its name!
+    </div>
+    <div class="card">
+      <div class="card-title">All Letters</div>
+      <div class="alpha-grid" id="alphaGrid"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Special Characters</div>
+      <div class="alpha-grid">
+        <div class="alpha-cell" onclick="speak('Ä')"><div class="letter">Ä</div><div class="pronun">eh</div></div>
+        <div class="alpha-cell" onclick="speak('Ö')"><div class="letter">Ö</div><div class="pronun">ouh</div></div>
+        <div class="alpha-cell" onclick="speak('Ü')"><div class="letter">Ü</div><div class="pronun">uuh</div></div>
+        <div class="alpha-cell" onclick="speak('ß')"><div class="letter">ß</div><div class="pronun">ess-set</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ARTICLES -->
+  <div class="section" id="articles">
+    <div class="sec-title">Der Artikel</div>
+    <div class="sec-subtitle">Articles change based on gender, case, and number</div>
+
+    <div class="info-box">
+      Every German noun has a <strong>gender</strong>: masculine (der), feminine (die), or neuter (das). In plural, all use <strong>die</strong>. The indefinite articles are ein / eine.
+    </div>
+
+    <div class="card">
+      <div class="card-title">Nominative Case — Definite (The)</div>
+      <table class="art-table">
+        <tr><th>Gender</th><th>Article</th><th>Example</th><th>Meaning</th></tr>
+        <tr><td>Masculine</td><td class="de gender-m">der</td><td>der Mann</td><td>the man</td></tr>
+        <tr><td>Feminine</td><td class="de gender-f">die</td><td>die Frau</td><td>the woman</td></tr>
+        <tr><td>Neuter</td><td class="de gender-n">das</td><td>das Kind</td><td>the child</td></tr>
+        <tr><td>Plural</td><td class="de gender-p">die</td><td>die Männer</td><td>the men</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Nominative Case — Indefinite (A / An)</div>
+      <table class="art-table">
+        <tr><th>Gender</th><th>Article</th><th>Example</th><th>Meaning</th></tr>
+        <tr><td>Masculine</td><td class="de gender-m">ein</td><td>ein Mann</td><td>a man</td></tr>
+        <tr><td>Feminine</td><td class="de gender-f">eine</td><td>eine Frau</td><td>a woman</td></tr>
+        <tr><td>Neuter</td><td class="de gender-n">ein</td><td>ein Kind</td><td>a child</td></tr>
+        <tr><td>Plural</td><td class="de gender-p">—</td><td>Männer</td><td>men</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Addressing People</div>
+      <div class="vocab-row"><div class="vocab-de">Sie</div><div class="vocab-en">You (formal)</div></div>
+      <div class="vocab-row"><div class="vocab-de">Ihre</div><div class="vocab-en">Your (formal)</div></div>
+      <div class="vocab-row"><div class="vocab-de">Du</div><div class="vocab-en">You (informal)</div></div>
+      <div class="vocab-row"><div class="vocab-de">Deine</div><div class="vocab-en">Your (informal)</div></div>
+      <div class="vocab-row"><div class="vocab-de">Ihr</div><div class="vocab-en">You (plural)</div></div>
+      <div class="vocab-row"><div class="vocab-de">Eure</div><div class="vocab-en">Your (plural)</div></div>
+    </div>
+  </div>
+
+  <!-- NUMBERS -->
+  <div class="section" id="numbers">
+    <div class="sec-title">Die Zahlen</div>
+    <div class="sec-subtitle">Numbers 0 – 100 and beyond</div>
+
+    <div class="card">
+      <div class="card-title">0 – 20</div>
+      <div class="num-grid" id="numGrid0"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Tens: 20 – 100</div>
+      <div class="num-grid" id="numGridTens"></div>
+    </div>
+    <div class="info-box">
+      <strong>Pattern for 21–99:</strong> Say the units + "und" + tens.<br>
+      Example: 21 = <strong>einundzwanzig</strong> (one-and-twenty), 45 = <strong>fünfundvierzig</strong>
+    </div>
+    <div class="card">
+      <div class="card-title">Large Numbers</div>
+      <div class="vocab-row"><div class="vocab-de">100</div><div class="vocab-en">hundert</div></div>
+      <div class="vocab-row"><div class="vocab-de">1,000</div><div class="vocab-en">tausend</div></div>
+      <div class="vocab-row"><div class="vocab-de">1,000,000</div><div class="vocab-en">eine Million</div></div>
+    </div>
+  </div>
+
+  <!-- TIME -->
+  <div class="section" id="time">
+    <div class="sec-title">Tage & Zeit</div>
+    <div class="sec-subtitle">Days, months, seasons & telling time</div>
+
+    <div class="card">
+      <div class="card-title">Time Words</div>
+      <div class="vocab-row"><div class="vocab-de">Heute</div><div class="vocab-en">Today</div></div>
+      <div class="vocab-row"><div class="vocab-de">Morgen</div><div class="vocab-en">Tomorrow</div></div>
+      <div class="vocab-row"><div class="vocab-de">Gestern</div><div class="vocab-en">Yesterday</div></div>
+      <div class="vocab-row"><div class="vocab-de">Jetzt</div><div class="vocab-en">Now</div></div>
+      <div class="vocab-row"><div class="vocab-de">Später</div><div class="vocab-en">Later</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Weekdays — Wochentage (all masculine → der)</div>
+      <div id="daysContainer"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Months — Monate (all masculine → der)</div>
+      <div class="months-grid" id="monthsGrid"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Seasons — Die Jahreszeiten</div>
+      <div class="season-grid">
+        <div class="season-cell" style="background:#fff9ec;"><div class="season-icon">🌸</div><div class="season-de">der Frühling</div><div class="season-en">Spring</div></div>
+        <div class="season-cell" style="background:#fff3e0;"><div class="season-icon">☀️</div><div class="season-de">der Sommer</div><div class="season-en">Summer</div></div>
+        <div class="season-cell" style="background:#f3ffe0;"><div class="season-icon">🍂</div><div class="season-de">der Herbst</div><div class="season-en">Autumn</div></div>
+        <div class="season-cell" style="background:#edf4ff;"><div class="season-icon">❄️</div><div class="season-de">der Winter</div><div class="season-en">Winter</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Telling Time — Wie spät ist es?</div>
+      <div class="vocab-row"><div class="vocab-de">Es ist 3 Uhr</div><div class="vocab-en">It is 3 o'clock</div></div>
+      <div class="vocab-row"><div class="vocab-de">halb vier</div><div class="vocab-en">half past three (3:30)</div></div>
+      <div class="vocab-row"><div class="vocab-de">Viertel nach drei</div><div class="vocab-en">quarter past three (3:15)</div></div>
+      <div class="vocab-row"><div class="vocab-de">Viertel vor vier</div><div class="vocab-en">quarter to four (3:45)</div></div>
+      <div class="vocab-row"><div class="vocab-de">Mittag</div><div class="vocab-en">Noon</div></div>
+      <div class="vocab-row"><div class="vocab-de">Mitternacht</div><div class="vocab-en">Midnight</div></div>
+    </div>
+  </div>
+
+  <!-- VERBS -->
+  <div class="section" id="verbs">
+    <div class="sec-title">Die Verben</div>
+    <div class="sec-subtitle">Essential A1 verbs with full conjugation</div>
+    <div class="info-box">
+      German verbs are conjugated (changed) based on who is doing the action. Here are the most important verbs at A1 level.
+    </div>
+    <div id="verbContainer"></div>
+  </div>
+
+  <!-- VOCABULARY -->
+  <div class="section" id="vocab">
+    <div class="sec-title">Wortschatz</div>
+    <div class="sec-subtitle">Essential A1 vocabulary by topic</div>
+
+    <div class="card">
+      <div class="card-title">Family — Die Familie</div>
+      <div class="fam-grid">
+        <div class="fam-cell"><div class="fam-icon">👨</div><div><div class="fam-de">der Vater</div><div class="fam-en">father</div></div></div>
+        <div class="fam-cell"><div class="fam-icon">👩</div><div><div class="fam-de">die Mutter</div><div class="fam-en">mother</div></div></div>
+        <div class="fam-cell"><div class="fam-icon">👦</div><div><div class="fam-de">der Sohn</div><div class="fam-en">son</div></div></div>
+        <div class="fam-cell"><div class="fam-icon">👧</div><div><div class="fam-de">die Tochter</div><div class="fam-en">daughter</div></div></div>
+        <div class="fam-cell"><div class="fam-icon">👴</div><div><div class="fam-de">der Großvater</div><div class="fam-en">grandfather</div></div></div>
+        <div class="fam-cell"><div class="fam-icon">👵</div><div><div class="fam-de">die Großmutter</div><div class="fam-en">grandmother</div></div></div>
+        <div class="fam-cell"><div class="fam-icon">👨‍👧</div><div><div class="fam-de">der Bruder</div><div class="fam-en">brother</div></div></div>
+        <div class="fam-cell"><div class="fam-icon">👩‍👦</div><div><div class="fam-de">die Schwester</div><div class="fam-en">sister</div></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Colors — Die Farben</div>
+      <div class="color-grid">
+        <div class="color-cell" style="background:#e53935;"><div>rot</div><div class="color-en">red</div></div>
+        <div class="color-cell" style="background:#1e88e5;"><div>blau</div><div class="color-en">blue</div></div>
+        <div class="color-cell" style="background:#43a047; color:white;"><div>grün</div><div class="color-en">green</div></div>
+        <div class="color-cell" style="background:#fdd835; color:#333;"><div>gelb</div><div class="color-en">yellow</div></div>
+        <div class="color-cell" style="background:#f57c00;"><div>orange</div><div class="color-en">orange</div></div>
+        <div class="color-cell" style="background:#8e24aa;"><div>lila</div><div class="color-en">purple</div></div>
+        <div class="color-cell" style="background:#555;"><div>grau</div><div class="color-en">grey</div></div>
+        <div class="color-cell" style="background:#222;"><div>schwarz</div><div class="color-en">black</div></div>
+        <div class="color-cell" style="background:#f3f3f3; color:#333; border:1px solid #ddd;"><div>weiß</div><div class="color-en">white</div></div>
+        <div class="color-cell" style="background:#e91e8c;"><div>rosa</div><div class="color-en">pink</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Food & Drink — Essen & Trinken</div>
+      <div id="foodVocab"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Body Parts — Der Körper</div>
+      <div id="bodyVocab"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Common Adjectives — Adjektive</div>
+      <div id="adjVocab"></div>
+    </div>
+  </div>
+
+  <!-- PHRASES -->
+  <div class="section" id="phrases">
+    <div class="sec-title">Redewendungen</div>
+    <div class="sec-subtitle">Common phrases for everyday conversation</div>
+
+    <div class="card">
+      <div class="card-title">Greetings</div>
+      <div class="phrase"><div class="phrase-de">Guten Morgen!</div><div class="phrase-en">Good morning!</div></div>
+      <div class="phrase"><div class="phrase-de">Guten Tag!</div><div class="phrase-en">Good afternoon!</div></div>
+      <div class="phrase"><div class="phrase-de">Guten Abend!</div><div class="phrase-en">Good evening!</div></div>
+      <div class="phrase"><div class="phrase-de">Hallo / Hi!</div><div class="phrase-en">Hello / Hi!</div></div>
+      <div class="phrase"><div class="phrase-de">Auf Wiedersehen!</div><div class="phrase-en">Goodbye!</div></div>
+      <div class="phrase"><div class="phrase-de">Tschüss!</div><div class="phrase-en">Bye! (informal)</div></div>
+      <div class="phrase"><div class="phrase-de">Bis bald!</div><div class="phrase-en">See you soon!</div></div>
+      <div class="phrase"><div class="phrase-de">Bis später!</div><div class="phrase-en">See you later!</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">How Are You?</div>
+      <div class="phrase"><div class="phrase-de">Wie geht's?</div><div class="phrase-en">How are you? (informal)</div></div>
+      <div class="phrase"><div class="phrase-de">Wie geht es Ihnen?</div><div class="phrase-en">How are you? (formal)</div></div>
+      <div class="phrase"><div class="phrase-de">Es geht.</div><div class="phrase-en">I'm alright.</div></div>
+      <div class="phrase"><div class="phrase-de">Sehr gut, danke!</div><div class="phrase-en">Very good, thank you!</div></div>
+      <div class="phrase"><div class="phrase-de">Nicht so gut.</div><div class="phrase-en">Not so good.</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Polite Expressions</div>
+      <div class="phrase"><div class="phrase-de">Bitte.</div><div class="phrase-en">Please / You're welcome.</div></div>
+      <div class="phrase"><div class="phrase-de">Danke! / Danke schön!</div><div class="phrase-en">Thank you! / Thank you very much!</div></div>
+      <div class="phrase"><div class="phrase-de">Es tut mir leid!</div><div class="phrase-en">I'm sorry!</div></div>
+      <div class="phrase"><div class="phrase-de">Entschuldigung!</div><div class="phrase-en">Excuse me!</div></div>
+      <div class="phrase"><div class="phrase-de">Natürlich!</div><div class="phrase-en">Of course!</div></div>
+      <div class="phrase"><div class="phrase-de">Nochmal, bitte!</div><div class="phrase-en">Once again, please!</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Introductions</div>
+      <div class="phrase"><div class="phrase-de">Wie heißen Sie? / Wie heißt du?</div><div class="phrase-en">What is your name?</div></div>
+      <div class="phrase"><div class="phrase-de">Ich heiße…</div><div class="phrase-en">My name is…</div></div>
+      <div class="phrase"><div class="phrase-de">Woher kommen Sie? / Woher kommst du?</div><div class="phrase-en">Where are you from?</div></div>
+      <div class="phrase"><div class="phrase-de">Ich komme aus…</div><div class="phrase-en">I am from…</div></div>
+      <div class="phrase"><div class="phrase-de">Wie alt sind Sie? / Wie alt bist du?</div><div class="phrase-en">How old are you?</div></div>
+      <div class="phrase"><div class="phrase-de">Ich bin … Jahre alt.</div><div class="phrase-en">I am … years old.</div></div>
+      <div class="phrase"><div class="phrase-de">Freut mich!</div><div class="phrase-en">Nice to meet you!</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Shopping & Everyday</div>
+      <div class="phrase"><div class="phrase-de">Was kostet das?</div><div class="phrase-en">How much does that cost?</div></div>
+      <div class="phrase"><div class="phrase-de">Das ist zu teuer.</div><div class="phrase-en">That is too expensive.</div></div>
+      <div class="phrase"><div class="phrase-de">Ich möchte… bitte.</div><div class="phrase-en">I would like… please.</div></div>
+      <div class="phrase"><div class="phrase-de">Haben Sie…?</div><div class="phrase-en">Do you have…?</div></div>
+      <div class="phrase"><div class="phrase-de">Ich verstehe nicht.</div><div class="phrase-en">I don't understand.</div></div>
+      <div class="phrase"><div class="phrase-de">Sprechen Sie Englisch?</div><div class="phrase-en">Do you speak English?</div></div>
+    </div>
+  </div>
+
+  <!-- QUIZ -->
+  <div class="section" id="quiz">
+    <div class="sec-title">Quiz 🎯</div>
+    <div class="sec-subtitle">Test your German A1 knowledge!</div>
+    <div class="card">
+      <div class="prog-wrap"><div class="prog-bar" id="progBar" style="width:0%"></div></div>
+      <div class="quiz-score" id="quizScore">Question 1 of 15 — Score: 0</div>
+      <div class="quiz-q" id="quizQ">Loading…</div>
+      <div class="quiz-hint" id="quizHint"></div>
+      <div class="quiz-options" id="quizOpts"></div>
+      <div class="quiz-feedback" id="quizFeedback"></div>
+      <button class="btn gold" id="quizNext" onclick="nextQ()" style="display:none">Next Question →</button>
+      <div id="quizEnd" style="display:none; text-align:center;">
+        <div style="font-size:2.5rem;margin-bottom:10px" id="quizEmoji">🎉</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;margin-bottom:6px" id="quizEndMsg"></div>
+        <div style="color:#aaa;font-size:0.87rem;margin-bottom:20px" id="quizEndScore"></div>
+        <button class="btn" onclick="restartQuiz()">Try Again 🔄</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">Deutsch A1 Complete Guide · Built for beginners 🇩🇪</div>
+
+<script>
+// ── DATA ──────────────────────────────────────────────────────────────────
+const alphabet = [
+  {l:'Aa',p:'A / ah'},{l:'Bb',p:'Be / bay'},{l:'Cc',p:'Ce / tsay'},
+  {l:'Dd',p:'De / day'},{l:'Ee',p:'E / ay'},{l:'Ff',p:'Ef / eff'},
+  {l:'Gg',p:'Ge / gay'},{l:'Hh',p:'Ha / hah'},{l:'Ii',p:'I / ehh'},
+  {l:'Jj',p:'Je / yot'},{l:'Kk',p:'Ka / kah'},{l:'Ll',p:'El / ell'},
+  {l:'Mm',p:'Em / em'},{l:'Nn',p:'En / en'},{l:'Oo',p:'O / oh'},
+  {l:'Pp',p:'Pe / pay'},{l:'Qq',p:'Qu / koo'},{l:'Rr',p:'Er / err'},
+  {l:'Ss',p:'Es / es'},{l:'Tt',p:'Te / tay'},{l:'Uu',p:'U / ohh'},
+  {l:'Vv',p:'Vau / fow'},{l:'Ww',p:'We / vay'},{l:'Xx',p:'Ix / iks'},
+  {l:'Yy',p:'Ypsilon'},{l:'Zz',p:'Zett / tset'}
+];
+
+const nums0 = [
+  [0,'Null'],[1,'Eins'],[2,'Zwei'],[3,'Drei'],[4,'Vier'],
+  [5,'Fünf'],[6,'Sechs'],[7,'Sieben'],[8,'Acht'],[9,'Neun'],
+  [10,'Zehn'],[11,'Elf'],[12,'Zwölf'],[13,'Dreizehn'],[14,'Vierzehn'],
+  [15,'Fünfzehn'],[16,'Sechzehn'],[17,'Siebzehn'],[18,'Achtzehn'],
+  [19,'Neunzehn'],[20,'Zwanzig']
+];
+const numsTens = [
+  [20,'Zwanzig'],[30,'Dreißig'],[40,'Vierzig'],[50,'Fünfzig'],
+  [60,'Sechzig'],[70,'Siebzig'],[80,'Achtzig'],[90,'Neunzig'],[100,'Hundert']
+];
+
+const days = [
+  ['Montag','Monday'],['Dienstag','Tuesday'],['Mittwoch','Wednesday'],
+  ['Donnerstag','Thursday'],['Freitag','Friday'],['Samstag','Saturday'],['Sonntag','Sunday']
+];
+const months = [
+  ['Januar','January'],['Februar','February'],['März','March'],
+  ['April','April'],['Mai','May'],['Juni','June'],
+  ['Juli','July'],['August','August'],['September','September'],
+  ['Oktober','October'],['November','November'],['Dezember','December']
+];
+
+const verbs = [
+  { de:'sein', en:'to be', conj:[
+    ['ich','bin'],['du','bist'],['er/sie/es','ist'],
+    ['wir','sind'],['ihr','seid'],['Sie/sie','sind']
+  ]},
+  { de:'haben', en:'to have', conj:[
+    ['ich','habe'],['du','hast'],['er/sie/es','hat'],
+    ['wir','haben'],['ihr','habt'],['Sie/sie','haben']
+  ]},
+  { de:'kommen', en:'to come', conj:[
+    ['ich','komme'],['du','kommst'],['er/sie/es','kommt'],
+    ['wir','kommen'],['ihr','kommt'],['Sie/sie','kommen']
+  ]},
+  { de:'gehen', en:'to go', conj:[
+    ['ich','gehe'],['du','gehst'],['er/sie/es','geht'],
+    ['wir','gehen'],['ihr','geht'],['Sie/sie','gehen']
+  ]},
+  { de:'heißen', en:'to be called', conj:[
+    ['ich','heiße'],['du','heißt'],['er/sie/es','heißt'],
+    ['wir','heißen'],['ihr','heißt'],['Sie/sie','heißen']
+  ]},
+  { de:'wohnen', en:'to live / reside', conj:[
+    ['ich','wohne'],['du','wohnst'],['er/sie/es','wohnt'],
+    ['wir','wohnen'],['ihr','wohnt'],['Sie/sie','wohnen']
+  ]},
+  { de:'sprechen', en:'to speak', conj:[
+    ['ich','spreche'],['du','sprichst'],['er/sie/es','spricht'],
+    ['wir','sprechen'],['ihr','sprecht'],['Sie/sie','sprechen']
+  ]},
+  { de:'machen', en:'to do / make', conj:[
+    ['ich','mache'],['du','machst'],['er/sie/es','macht'],
+    ['wir','machen'],['ihr','macht'],['Sie/sie','machen']
+  ]}
+];
+
+const food = [
+  ['das Brot','Bread','n'],['die Milch','Milk','f'],['das Wasser','Water','n'],
+  ['der Kaffee','Coffee','m'],['der Tee','Tea','m'],['das Bier','Beer','n'],
+  ['der Wein','Wine','m'],['das Fleisch','Meat','n'],['das Gemüse','Vegetables','n'],
+  ['das Obst','Fruit','n'],['der Apfel','Apple','m'],['die Banane','Banana','f'],
+  ['der Käse','Cheese','m'],['das Ei','Egg','n'],['die Suppe','Soup','f']
+];
+
+const body = [
+  ['der Kopf','Head','m'],['das Auge','Eye','n'],['die Nase','Nose','f'],
+  ['der Mund','Mouth','m'],['das Ohr','Ear','n'],['der Hals','Neck','m'],
+  ['die Hand','Hand','f'],['der Arm','Arm','m'],['das Bein','Leg','n'],
+  ['der Fuß','Foot','m'],['der Rücken','Back','m'],['der Bauch','Stomach','m']
+];
+
+const adj = [
+  ['groß / klein','big / small'],['gut / schlecht','good / bad'],
+  ['alt / jung','old / young'],['schnell / langsam','fast / slow'],
+  ['heiß / kalt','hot / cold'],['teuer / billig','expensive / cheap'],
+  ['schön / hässlich','beautiful / ugly'],['neu / alt','new / old'],
+  ['richtig / falsch','right / wrong'],['laut / leise','loud / quiet']
+];
+
+// QUIZ QUESTIONS
+const quizData = [
+  {q:'What is "Good morning" in German?', hint:'A greeting for the morning', opts:['Guten Abend','Guten Morgen','Guten Tag','Gute Nacht'], a:1},
+  {q:'Which article is used for masculine nouns?', hint:'Nominative case', opts:['die','das','eine','der'], a:3},
+  {q:'How do you say "Wednesday" in German?', hint:'The middle of the week', opts:['Montag','Dienstag','Mittwoch','Donnerstag'], a:2},
+  {q:'What does "Ich heiße" mean?', hint:'Introducing yourself', opts:['I live in','I am from','My name is','I speak'], a:2},
+  {q:'What is 7 in German?', hint:'Die Zahlen', opts:['Acht','Sechs','Neun','Sieben'], a:3},
+  {q:'Which verb means "to have"?', hint:'A very common verb', opts:['sein','haben','gehen','kommen'], a:1},
+  {q:'What does "Danke schön" mean?', hint:'A polite expression', opts:['Excuse me','I am sorry','Thank you very much','Please'], a:2},
+  {q:'How do you say "I am from Germany"?', hint:'Use "Ich komme aus…"', opts:['Ich bin Deutschland','Ich komme aus Deutschland','Ich heiße Deutschland','Ich wohne Deutschland'], a:1},
+  {q:'What is "blue" in German?', hint:'Die Farben', opts:['rot','grün','blau','gelb'], a:2},
+  {q:'Which article is used for ALL plural nouns?', hint:'Regardless of gender', opts:['der','das','die','ein'], a:2},
+  {q:'What does "Wie geht\'s?" mean?', hint:'A common greeting question', opts:['Where are you from?','How are you?','What is your name?','How old are you?'], a:1},
+  {q:'How do you say "See you soon!" in German?', hint:'A farewell phrase', opts:['Bis bald!','Guten Tag!','Bis morgen!','Auf Wiedersehen!'], a:0},
+  {q:'What is "father" in German?', hint:'Die Familie', opts:['die Mutter','der Sohn','der Vater','der Bruder'], a:2},
+  {q:'How do you say 20 in German?', hint:'Die Zahlen', opts:['Zwölf','Zwanzig','Dreißig','Zehn'], a:1},
+  {q:'What does "Ich verstehe nicht" mean?', hint:'Useful when learning a language!', opts:['I don\'t speak German','I am not here','I don\'t understand','I don\'t know'], a:2},
+];
+
+// ── RENDERING ─────────────────────────────────────────────────────────────
+function buildAlphabet() {
+  const g = document.getElementById('alphaGrid');
+  alphabet.forEach(({l,p}) => {
+    const d = document.createElement('div');
+    d.className = 'alpha-cell';
+    d.onclick = () => speak(l[0]);
+    d.innerHTML = `<div class="letter">${l}</div><div class="pronun">${p}</div>`;
+    g.appendChild(d);
+  });
+}
+
+function buildNumbers() {
+  const g0 = document.getElementById('numGrid0');
+  nums0.forEach(([n,w]) => {
+    g0.innerHTML += `<div class="num-cell"><div class="num-n">${n}</div><div class="num-de">${w}</div></div>`;
+  });
+  const gt = document.getElementById('numGridTens');
+  numsTens.forEach(([n,w]) => {
+    gt.innerHTML += `<div class="num-cell"><div class="num-n">${n}</div><div class="num-de">${w}</div></div>`;
+  });
+}
+
+function buildDays() {
+  const c = document.getElementById('daysContainer');
+  days.forEach(([de,en],i) => {
+    c.innerHTML += `<div class="day-row"><div class="day-num">${i+1}</div><div class="day-de">der ${de}</div><div class="day-en">${en}</div></div>`;
+  });
+}
+
+function buildMonths() {
+  const g = document.getElementById('monthsGrid');
+  months.forEach(([de,en],i) => {
+    g.innerHTML += `<div class="month-cell"><div class="month-num">${i+1 < 10 ? '0'+(i+1) : i+1}</div><div class="month-de">der ${de}</div><div class="month-en">${en}</div></div>`;
+  });
+}
+
+function buildVerbs() {
+  const c = document.getElementById('verbContainer');
+  verbs.forEach(v => {
+    let rows = v.conj.map(([p,f]) => `<div class="conj-row"><span class="conj-pron">${p}</span><span class="conj-form">${f}</span></div>`).join('');
+    c.innerHTML += `<div class="verb-card"><div class="verb-name">${v.de}</div><div class="verb-meaning">${v.en}</div><div class="conj-grid">${rows}</div></div>`;
+  });
+}
+
+function buildVocabList(id, data) {
+  const c = document.getElementById(id);
+  data.forEach(([de,en,g]) => {
+    const gClass = g === 'm' ? 'gender-m' : g === 'f' ? 'gender-f' : 'gender-n';
+    c.innerHTML += `<div class="vocab-row"><div class="vocab-de">${de}</div><div class="vocab-en">${en}</div></div>`;
+  });
+}
+function buildAdjList(id, data) {
+  const c = document.getElementById(id);
+  data.forEach(([de,en]) => {
+    c.innerHTML += `<div class="vocab-row"><div class="vocab-de">${de}</div><div class="vocab-en">${en}</div></div>`;
+  });
+}
+
+// ── QUIZ ──────────────────────────────────────────────────────────────────
+let qIdx = 0, score = 0, answered = false;
+const shuffled = [...quizData].sort(() => Math.random() - 0.5);
+
+function renderQ() {
+  const total = shuffled.length;
+  if (qIdx >= total) { showEnd(); return; }
+  const q = shuffled[qIdx];
+  document.getElementById('progBar').style.width = (qIdx / total * 100) + '%';
+  document.getElementById('quizScore').textContent = `Question ${qIdx+1} of ${total} — Score: ${score}`;
+  document.getElementById('quizQ').textContent = q.q;
+  document.getElementById('quizHint').textContent = q.hint;
+  document.getElementById('quizFeedback').textContent = '';
+  document.getElementById('quizNext').style.display = 'none';
+  answered = false;
+  const opts = document.getElementById('quizOpts');
+  opts.innerHTML = '';
+  q.opts.forEach((o, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'quiz-opt';
+    btn.textContent = o;
+    btn.onclick = () => checkAns(i, q.a);
+    opts.appendChild(btn);
+  });
+}
+
+function checkAns(chosen, correct) {
+  if (answered) return;
+  answered = true;
+  const btns = document.querySelectorAll('.quiz-opt');
+  btns[correct].classList.add('correct');
+  if (chosen === correct) {
+    score++;
+    document.getElementById('quizFeedback').textContent = '✅ Richtig! Correct!';
+    document.getElementById('quizFeedback').style.color = '#2d6a3f';
+  } else {
+    btns[chosen].classList.add('wrong');
+    document.getElementById('quizFeedback').textContent = '❌ Falsch! Incorrect.';
+    document.getElementById('quizFeedback').style.color = '#a33';
+  }
+  btns.forEach(b => b.classList.add('disabled'));
+  document.getElementById('quizNext').style.display = 'block';
+}
+
+function nextQ() {
+  qIdx++;
+  renderQ();
+}
+
+function showEnd() {
+  document.getElementById('quizOpts').style.display = 'none';
+  document.getElementById('quizQ').style.display = 'none';
+  document.getElementById('quizHint').style.display = 'none';
+  document.getElementById('quizFeedback').style.display = 'none';
+  document.getElementById('quizNext').style.display = 'none';
+  document.getElementById('progBar').style.width = '100%';
+  const total = shuffled.length;
+  const pct = Math.round(score / total * 100);
+  const emoji = pct >= 80 ? '🏆' : pct >= 60 ? '😊' : '📚';
+  const msg = pct >= 80 ? 'Ausgezeichnet! Excellent!' : pct >= 60 ? 'Gut gemacht! Well done!' : 'Weiter üben! Keep practicing!';
+  document.getElementById('quizEmoji').textContent = emoji;
+  document.getElementById('quizEndMsg').textContent = msg;
+  document.getElementById('quizEndScore').textContent = `You scored ${score} out of ${total} (${pct}%)`;
+  document.getElementById('quizEnd').style.display = 'block';
+}
+
+function restartQuiz() {
+  qIdx = 0; score = 0; answered = false;
+  shuffled.sort(() => Math.random() - 0.5);
+  document.getElementById('quizOpts').style.display = 'grid';
+  document.getElementById('quizQ').style.display = 'block';
+  document.getElementById('quizHint').style.display = 'block';
+  document.getElementById('quizFeedback').style.display = 'block';
+  document.getElementById('quizEnd').style.display = 'none';
+  renderQ();
+}
+
+// ── NAV ───────────────────────────────────────────────────────────────────
+function show(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+// ── TTS ───────────────────────────────────────────────────────────────────
+function speak(text) {
+  if ('speechSynthesis' in window) {
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'de-DE';
+    speechSynthesis.cancel();
+    speechSynthesis.speak(u);
+  }
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────────
+buildAlphabet();
+buildNumbers();
+buildDays();
+buildMonths();
+buildVerbs();
+buildVocabList('foodVocab', food);
+buildVocabList('bodyVocab', body);
+buildAdjList('adjVocab', adj);
+renderQ();
+</script>
+</body>
+</html>
